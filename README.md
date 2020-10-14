@@ -1,8 +1,8 @@
-# Import-Template
+# OnTimePro ⏲
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-A template repo for making our lives easier 🐬
+A real-time pop-up-notification App which reminds us of our schedule/timetable⏳ with just one click to wake up the homescreen of our smartphone📱.
 
 ## Welcome to Elevate labs 🚀
 
@@ -12,6 +12,17 @@ A template repo for making our lives easier 🐬
 We are here to allow collaboration through this Organization inorder to lift/elevate each other through learning.Amazing!!:heart_eyes::heart_eyes:
 
  Anyone and everyone is welcomed!:sunglasses:
+
+ ## Workplan and Flowchart
+![App_Work_Flowchart](assets/images/ontimeproflowchart.png)
+
+## Goals
+- This App is being developed with the purpose to help people(majorly college students)👨‍🎓👩‍🎓 manage their time efficiently and effectively.
+- The App would also be useful for students  who often tend to forget things  or some events/classes/assignments 📓 🏛scheduled at a time in future. It will remind them of their events/tasks from time to time. 
+- The Application would make the working flow simple😃 for a student in a busy schedule and will organise the user’s timetable/schedule data in a structured manner so that he/she can get real time updates regarding that. 
+ ## Pre-Requisites
+ -Basic Knowledge and implementation of Git And Github
+ -Android Studio And Latest Version Installed On Your Local Machine 
 
 ## Contributors ✨
 
