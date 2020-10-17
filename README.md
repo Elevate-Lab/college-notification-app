@@ -23,7 +23,7 @@ We are here to allow collaboration through this Organization inorder to lift/ele
 
 ## Pre-Requisites
  - Basic Knowledge and implementation of Git And Github
- - Android Studio, Latest Version (4.0+) Installed On Your Local Machine 
+ - Android Studio, Latest Version (4.1+) Installed On Your Local Machine 
 
 ## Contributors ✨
 
