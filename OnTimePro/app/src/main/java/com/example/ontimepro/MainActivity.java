@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 5000;
+    private static int SPLASH_SCREEN = 3000;
 
     // variables
     Animation topanim, bottomanim;
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Animations
 
-       topanim= AnimationUtils.loadAnimation(this, R.anim, top_animation);
-       bottomanim= AnimationUtils.loadAnimation(this, R.anim, bottom_animation);
+       topanim= AnimationUtils.loadAnimation(this,R.anim.top_animation);
+       bottomanim= AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         //Hooks
         logo = findViewById(R.id.imageView);
