@@ -36,6 +36,10 @@ We are here to allow collaboration through this Organization inorder to lift/ele
 ## How to Contribute
 
 Follow the [Contribution Guidelines](https://github.com/Elevate-Lab/elevate-lab-website/blob/main/How%20To%20Contribute.md) to improve and add to this project.
+### Note
+While making the PR from the issue-branch created already by the issue-branch-bot make sure that your PR is from the isssue branch of your remote to upstream's main branch.
+Refer to the screenshot below
+![pr_fron_to](assets/images/pr_from_to.png)
 
 ## Contributors ✨
 
