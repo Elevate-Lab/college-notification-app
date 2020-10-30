@@ -5,7 +5,7 @@
     android:id="@+id/login_login_btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".WelcomeActivity">
 
 
     <ScrollView
