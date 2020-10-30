@@ -33,39 +33,9 @@ We are here to allow collaboration through this Organization inorder to lift/ele
  - Basic Knowledge and implementation of Git And Github
  - Android Studio, Latest Version (4.1+) Installed On Your Local Machine 
  
-## Contributing
+## How to Contribute
 
-#### Getting started
-
-We will follow the official GitHub documentation for setting up the repo.
-
-- Forking and cloning the repository
-
-  > [Link to GitHub Docs](https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork)
-
-  By forking a repository you create your own copy of the project and make your changes there. Cloning a project means that you are setting up the project on your local system.
-
-- Syncing a fork
-
-  > [Link to GitHub docs](https://help.github.com/articles/syncing-a-fork/)
-
-  We keep our fork in sync to the original repository so that our copy of the project has the latest changes from the original project.
-
-- Making changes to project and committing a change
-  > For making the respective changes you need to switch to your issue-branch which has been created already by bot respectively. To do so run the following git commands
-  1. git branch -a
-     > After running it you can se all the branches. From which you have to find your own issue-branch. Copy the respective branch name.
-  2. git checkout --track origin/<<-paste the copied branch name here->>
-     > After running the above command you are switched to your respective issue branch and good to go.
- 
- - Making a pull request
-
-  > [Link to docs](https://help.github.com/articles/about-pull-requests/)
-
-  Pull request means submitting your changes to the original project for the review. Once the maintainers of the project feel that your changes are appropriate then your pull     request will be merged.
-
-* Add relevant commit message in the pr, mention issue number and live link to comment while making pr.
- 
+Follow the [Contribution Guidelines](https://github.com/Elevate-Lab/elevate-lab-website/blob/main/How%20To%20Contribute.md) to improve and add to this project.
 
 ## Contributors ✨
 
