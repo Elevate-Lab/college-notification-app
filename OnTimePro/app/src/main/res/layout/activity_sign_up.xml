@@ -162,14 +162,9 @@ tools:ignore="ExtraText">
                     android:backgroundTint="@color/input_edt_background_color"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.cardview.widget.CardView>
-
-
-
 </RelativeLayout>
 
 
