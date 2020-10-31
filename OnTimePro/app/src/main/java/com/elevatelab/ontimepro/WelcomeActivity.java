@@ -1,4 +1,4 @@
-package com.example.ontimepro;
+package com.elevatelab.ontimepro;
 
 import android.os.Bundle;
 
