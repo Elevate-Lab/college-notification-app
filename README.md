@@ -21,9 +21,25 @@ We are here to allow collaboration through this Organization inorder to lift/ele
 - The App would also be useful for students  who often tend to forget things  or some events/classes/assignments 📓 🏛scheduled at a time in future. It will remind them of their events/tasks from time to time. 
 - The Application would make the working flow simple😃 for a student in a busy schedule and will organise the user’s timetable/schedule data in a structured manner so that he/she can get real time updates regarding that. 
 
+## TechStack
+- Front End -> Java & XML
+- Backend :
+    - Local Database -> SQLite Database and Queries
+    - Main Database -> Firebase Cloud FireStore, Real Time DataBase
+- Authentication -> Firebase Authentication 
+   
+
 ## Pre-Requisites
  - Basic Knowledge and implementation of Git And Github
  - Android Studio, Latest Version (4.1+) Installed On Your Local Machine 
+ 
+## How to Contribute
+
+Follow the [Contribution Guidelines](https://github.com/Elevate-Lab/elevate-lab-website/blob/main/How%20To%20Contribute.md) to improve and add to this project.
+### Note
+While making the PR from the issue-branch created already by the issue-branch-bot make sure that your PR is from the isssue branch of your remote to upstream's main branch.
+Refer to the screenshot below
+![pr_fron_to](assets/images/pr_from_to.png)
 
 ## Contributors ✨
 
