@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "214296115472",
+    "firebase_url": "https://ontimepro-d4bc1.firebaseio.com",
+    "project_id": "ontimepro-d4bc1",
+    "storage_bucket": "ontimepro-d4bc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214296115472:android:a7e431142318c7a5cbcd95",
+        "android_client_info": {
+          "package_name": "com.elevatelab.ontimepro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214296115472-4seeulro2n7nv85nhjjmrob63759a6ob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elevatelab.ontimepro",
+            "certificate_hash": "8952d582a530eb15c7fa5e09fb4e99ed2956314e"
+          }
+        },
+        {
+          "client_id": "214296115472-d59khakcqacb9dt6ssbnn083fu8fnabd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlwoea_p2z9sZaPhcQToc35K3lGVppivU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214296115472-d59khakcqacb9dt6ssbnn083fu8fnabd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
