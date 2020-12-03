@@ -44,14 +44,15 @@
                 android:textSize="24sp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/google_login_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                app:cornerRadius="16dp"
                 android:text="@string/Login_With_Google"
+                android:textAllCaps="false"
                 android:textSize="16sp"
-                android:textAllCaps="false" />
+                app:cornerRadius="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -89,9 +90,10 @@
                         android:layout_below="@id/email_text_view">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email_edit_text_login"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"/>
+                            android:inputType="textEmailAddress" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
@@ -113,10 +115,11 @@
                         android:layout_below="@id/password_text_view">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/pass_edit_text_login"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textPassword"
-                            android:layout_marginBottom="32dp"/>
+                            android:layout_marginBottom="32dp"
+                            android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </RelativeLayout>
