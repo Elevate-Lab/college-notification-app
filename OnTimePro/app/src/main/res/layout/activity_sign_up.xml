@@ -78,6 +78,7 @@
                     app:hintAnimationEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/input_edt_background_color"
@@ -100,6 +101,7 @@
                     app:hintAnimationEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mob_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/input_edt_background_color"
@@ -122,6 +124,7 @@
                     app:hintAnimationEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/input_edt_background_color"
@@ -146,6 +149,7 @@
                     app:passwordToggleTint="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/input_edt_background_color"
@@ -171,6 +175,7 @@
                     app:passwordToggleTint="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cnf_pass_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/input_edt_background_color"
