@@ -14,8 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        mSignUp=(TextView)findViewById(R.id.signUp_txt);
+        initViews();
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,5 +23,8 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private void initViews(){
+        mSignUp=(TextView)findViewById(R.id.signUp_txt);
     }
 }

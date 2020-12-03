@@ -13,7 +13,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        sign_in = findViewById(R.id.signUp_txt);
+        initViews();
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -21,5 +21,8 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+    private void initViews(){
+        sign_in = findViewById(R.id.signUp_txt);
     }
 }

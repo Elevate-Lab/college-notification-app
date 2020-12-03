@@ -15,8 +15,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        registerBtn = findViewById(R.id.login_register_btn);
-        loginBtn = findViewById(R.id.login_btn);
+        initViews();
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,5 +32,9 @@ public class WelcomeActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private void initViews(){
+        registerBtn = findViewById(R.id.login_register_btn);
+        loginBtn = findViewById(R.id.login_btn);
     }
 }
