@@ -25,6 +25,10 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 
 public class IndividualSignUpFragment extends Fragment {
     private ArrayList<String> collegeOptions;
@@ -45,9 +49,11 @@ public class IndividualSignUpFragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_individual_sign_up, container, false);
         initViews();
+
         collegeOptions = new ArrayList<>();
         collegeOptions.add("Choose Institution");
         getCollegeOptions();
+
 
         individualSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +116,7 @@ public class IndividualSignUpFragment extends Fragment {
         emailTextInputLayout = rootView.findViewById(R.id.email_txt_input_layout);
         passwordTextInputLayout = rootView.findViewById(R.id.password_text_input_layout);
         cnfPasswordTextInputLayout = rootView.findViewById(R.id.cnf_password_text_input_layout);
+
     }
 
     private void getCollegeOptions()
