@@ -3,17 +3,21 @@ package com.elevatelab.ontimepro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.textfield.TextInputEditText;
+import com.elevatelab.ontimepro.adapters.SignUpFragmentStateAdapter;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class SignUpActivity extends AppCompatActivity {
     private TextView sign_in;
-    private Button sign_up;
-    private TextInputEditText name, mob_no, email, pass, cnf_pass;
+    private ViewPager2 signUpViewPager;
+    private TabLayout signUpTabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +30,26 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        signUpViewPager.setAdapter(new SignUpFragmentStateAdapter(SignUpActivity.this));
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(
+                signUpTabLayout, signUpViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                if (position == 0) {
+                    tab.setText("Organization");
+                } else {
+                    tab.setText("Individual");
+                }
+            }
+        }
+        );
+        tabLayoutMediator.attach();
+
     }
-    private void initViews(){
+    private void initViews() {
         sign_in = findViewById(R.id.signUp_txt);
-        sign_up = findViewById(R.id.sign_up_btn);
-        name = findViewById(R.id.name_edit_text);
-        mob_no = findViewById(R.id.mob_edit_text);
-        email = findViewById(R.id.email_edit_text);
-        pass = findViewById(R.id.password_edit_text);
-        cnf_pass = findViewById(R.id.cnf_pass_edit_text);
+        signUpViewPager = findViewById(R.id.sign_up_viewPager);
+        signUpTabLayout = findViewById(R.id.sign_up_tab_layout);
     }
 }

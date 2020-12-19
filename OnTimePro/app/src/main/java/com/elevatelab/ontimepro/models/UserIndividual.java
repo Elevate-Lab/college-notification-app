@@ -1,16 +1,16 @@
 package com.elevatelab.ontimepro.models;
 
-public class User{
+public class UserIndividual {
 
-    private String name;
-    private String mobile;
-    private String email;
-    private String password;
+    private final String name;
+    private final String organization;
+    private final String email;
+    private final String password;
 
 
-    public User(String name, String mobile ,String email, String password) {
+    public UserIndividual(String name, String organization, String email, String password) {
         this.name = name;
-        this.mobile = mobile;
+        this.organization = organization;
         this.email = email;
         this.password = password;
     }
@@ -21,7 +21,7 @@ public class User{
 
 
     public String getMobile() {
-        return mobile;
+        return organization;
     }
 
 
