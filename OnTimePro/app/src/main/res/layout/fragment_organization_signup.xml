@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:padding="16dp"
     app:cardBackgroundColor="@color/black"
     tools:context=".Fragments.IndividualSignUpFragment">
@@ -11,7 +11,8 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/signUp_card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/organization_sign_up_btn"
         app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="32dp"
         app:cardElevation="0dp">
@@ -31,9 +32,11 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/name_txt_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
+                    android:textColorHint="@color/white"
                     app:hintTextColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -47,8 +50,10 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email_txt_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/white"
                     android:hint="Email">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -62,8 +67,10 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/domain_text_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/white"
                     android:hint="Domain">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -77,9 +84,11 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_text_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
+                    android:textColorHint="@color/white"
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="@color/white">
 
@@ -94,9 +103,11 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cnf_text_input_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
+                    android:textColorHint="@color/white"
                     android:hint="Confirm Password"
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="@color/white">
@@ -120,7 +131,7 @@
         android:id="@+id/organization_sign_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signUp_card"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-24dp"
         android:text="Sign Up"
