@@ -4,16 +4,31 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.elevatelab.ontimepro.R;
+import com.elevatelab.ontimepro.SignUpActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class IndividualSignUpFragment extends Fragment {
+    private ArrayList<String> collegeOptions;
+    private FirebaseFirestore db;
     private View rootView;
     private TextInputEditText nameEdt, emailEdt, passwordEdt, confirmPasswordEdt;
     private Spinner organizationSpinner;
@@ -30,6 +45,9 @@ public class IndividualSignUpFragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_individual_sign_up, container, false);
         initViews();
+        collegeOptions = new ArrayList<>();
+        collegeOptions.add("Choose Institution");
+        getCollegeOptions();
 
         individualSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +55,18 @@ public class IndividualSignUpFragment extends Fragment {
                 if (validateFields()) {
 
                 }
+            }
+        });
+
+        organizationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(), collegeOptions.get(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -80,5 +110,38 @@ public class IndividualSignUpFragment extends Fragment {
         emailTextInputLayout = rootView.findViewById(R.id.email_txt_input_layout);
         passwordTextInputLayout = rootView.findViewById(R.id.password_text_input_layout);
         cnfPasswordTextInputLayout = rootView.findViewById(R.id.cnf_password_text_input_layout);
+    }
+
+    private void getCollegeOptions()
+    {
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("Colleges")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.getResult() != null && task.isSuccessful())
+                        {
+                            for(QueryDocumentSnapshot s : task.getResult())
+                            {
+                                System.out.println(s.get("name"));
+                                collegeOptions.add(s.get("name").toString());
+                                setSpinnerDetails();
+                            }
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(), "Some Issue Occurred", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void setSpinnerDetails(){
+        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), R.layout.support_simple_spinner_dropdown_item, collegeOptions);
+        organizationSpinner.setAdapter(adapter);
     }
 }
