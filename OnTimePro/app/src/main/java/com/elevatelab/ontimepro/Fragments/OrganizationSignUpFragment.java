@@ -1,16 +1,32 @@
 package com.elevatelab.ontimepro.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.elevatelab.ontimepro.MainActivity;
 import com.elevatelab.ontimepro.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 
 public class OrganizationSignUpFragment extends Fragment {
@@ -19,6 +35,9 @@ public class OrganizationSignUpFragment extends Fragment {
     private TextInputEditText nameEdt, emailEdt, domainEdt, passwordEdt, confirmPasswordEdt;
     private MaterialButton orgSignUpBtn;
     private TextInputLayout nameTextInputLayout, emailTextInputLayout, domainTextInputLayout, passwordTextInputLayout, cnfPasswordTextInputLayout;
+    private FirebaseAuth orgFirebaseAuth;
+    private FirebaseFirestore mFirebaseFireStore;
+    private String UserId;
 
     public OrganizationSignUpFragment() {
         // Required empty public constructor
@@ -30,12 +49,41 @@ public class OrganizationSignUpFragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_organization_signup, container, false);
         initViews();
-
+        orgFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseFireStore = FirebaseFirestore.getInstance();
         orgSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validateFields()) {
-
+                    String email = Objects.requireNonNull(emailEdt.getText()).toString().trim();
+                    String password = Objects.requireNonNull(passwordEdt.getText()).toString().trim();
+                    final String name = Objects.requireNonNull(nameEdt.getText()).toString();
+                    final String domain = Objects.requireNonNull(domainEdt.getText()).toString();
+                    orgFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getContext(), "Organization registered, successfully !!", Toast.LENGTH_SHORT).show();
+                                UserId = Objects.requireNonNull(orgFirebaseAuth.getCurrentUser()).getUid();
+                                DocumentReference mDocumentReference = mFirebaseFireStore.collection("organizations").document(UserId);
+                                Map<String, String> orgMap = new HashMap<>();
+                                orgMap.put("orgName", name);
+                                orgMap.put("orgDomain", domain);
+                                mDocumentReference.set(orgMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d("SignUpProfileSetUp : ", "Successful for " + UserId);
+                                    }
+                                });
+                                Intent mainActivityIntent = new Intent(getContext(), MainActivity.class);
+                                startActivity(mainActivityIntent);
+                                Objects.requireNonNull(getActivity()).finish();
+                            } else {
+                                Log.e("SignUpError :", "" + task.getException());
+                                Toast.makeText(getContext(), "Error in Signing Up !!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -59,27 +107,27 @@ public class OrganizationSignUpFragment extends Fragment {
 
     private boolean validateFields() {
         boolean returnCheck = true;
-        if (nameEdt.getText().toString().isEmpty()) {
+        if (Objects.requireNonNull(nameEdt.getText()).toString().trim().isEmpty()) {
             nameTextInputLayout.setError("Name is required !");
             returnCheck = false;
         }
-        if (emailEdt.getText().toString().isEmpty()) {
+        if (Objects.requireNonNull(emailEdt.getText()).toString().trim().isEmpty()) {
             emailTextInputLayout.setError("Email is required !");
             returnCheck = false;
         }
-        if (domainEdt.getText().toString().isEmpty()) {
+        if (Objects.requireNonNull(domainEdt.getText()).toString().trim().isEmpty()) {
             domainTextInputLayout.setError("Domain is required !");
             returnCheck = false;
         }
-        if (passwordEdt.getText().toString().isEmpty()) {
+        if (Objects.requireNonNull(passwordEdt.getText()).toString().trim().isEmpty()) {
             passwordTextInputLayout.setError("Password is required !");
             returnCheck = false;
         }
-        if (confirmPasswordEdt.getText().toString().isEmpty()) {
+        if (Objects.requireNonNull(confirmPasswordEdt.getText()).toString().trim().isEmpty()) {
             cnfPasswordTextInputLayout.setError("Confirm Password is required !");
             returnCheck = false;
         }
-        if (!confirmPasswordEdt.getText().toString().equals(passwordEdt.getText().toString())) {
+        if (!confirmPasswordEdt.getText().toString().trim().equals(passwordEdt.getText().toString().trim())) {
             cnfPasswordTextInputLayout.setError("Confirm Password didn't match !");
             returnCheck = false;
         }

@@ -23,6 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         initViews();
+
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
