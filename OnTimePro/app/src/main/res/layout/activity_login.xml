@@ -110,15 +110,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/password"
+                        android:layout_marginBottom="32dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
+                        app:passwordToggleEnabled="true"
                         android:layout_below="@id/password_text_view">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pass_edit_text_login"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="32dp"
                             android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
