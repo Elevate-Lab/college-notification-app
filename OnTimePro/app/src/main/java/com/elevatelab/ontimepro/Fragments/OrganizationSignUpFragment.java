@@ -55,7 +55,7 @@ public class OrganizationSignUpFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (validateFields()) {
-                    String email = Objects.requireNonNull(emailEdt.getText()).toString().trim();
+                    final String email = Objects.requireNonNull(emailEdt.getText()).toString().trim();
                     String password = Objects.requireNonNull(passwordEdt.getText()).toString().trim();
                     final String name = Objects.requireNonNull(nameEdt.getText()).toString();
                     final String domain = Objects.requireNonNull(domainEdt.getText()).toString();
@@ -69,6 +69,8 @@ public class OrganizationSignUpFragment extends Fragment {
                                 Map<String, String> orgMap = new HashMap<>();
                                 orgMap.put("orgName", name);
                                 orgMap.put("orgDomain", domain);
+                                orgMap.put("userID",UserId);
+                                orgMap.put("email",email);
                                 mDocumentReference.set(orgMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
