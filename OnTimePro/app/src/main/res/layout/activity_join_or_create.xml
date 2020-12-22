@@ -47,46 +47,6 @@
         app:layout_constraintVertical_bias="0.314" />
 
 
-    <!--
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/button"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16sp"
-        android:layout_marginRight="16sp"
-        android:text="  Join a Channel"
-        app:layout_constraintBottom_toBottomOf="@id/imageView2"
-        app:layout_constraintEnd_toEndOf="@id/imageView2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="  Create a Channel"
-        android:layout_marginLeft="16sp"
-        android:layout_marginRight="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
-
--->
+   
 </androidx.constraintlayout.widget.ConstraintLayout>
 
