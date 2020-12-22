@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#5468AF</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryDark">#4A4A4A</color>
     <color name="colorAccent">#5468AF</color>
     <color name="black">#212121</color>
     <color name="input_edt_background_color">#8A8A8A</color>
