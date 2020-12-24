@@ -56,7 +56,7 @@ Thanks goes to these wonderful people 💜 ([emoji key](https://allcontributors.
     <td align="center"><a href="https://github.com/deepakDOTexe"><img src="https://avatars2.githubusercontent.com/u/46655706?v=4" width="100px;" alt=""/><br /><sub><b>Deepak Katre</b></sub></a><br /><a href="#maintenance-deepakDOTexe" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/Shreesh90"><img src="https://avatars1.githubusercontent.com/u/6941016?v=4" width="100px;" alt=""/><br /><sub><b>Shreesh90</b></sub></a><br /><a href="https://github.com/Elevate-Lab/Import-Template/commits?author=Shreesh90" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/IC1101Virgo"><img src="https://avatars1.githubusercontent.com/u/59052808?v=4" width="100px;" alt=""/><br /><sub><b>Anjali Chaturvedi</b></sub></a><br /><a href="https://github.com/Elevate-Lab/Import-Template/commits?author=IC1101Virgo" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Jyotika999"><img src="https://avatars0.githubusercontent.com/u/54600270?v=4" width="100px;" alt=""/><br /><sub><b>Incredible</b></sub></a><br /><a href="https://github.com/Elevate-Lab/Import-Template/commits?author=Jyotika999" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Jyotika999"><img src="https://avatars0.githubusercontent.com/u/54600270?v=4" width="100px;" alt=""/><br /><sub><b>Jyotika</b></sub></a><br /><a href="https://github.com/Elevate-Lab/Import-Template/commits?author=Jyotika999" title="Documentation">📖</a></td>
   </tr>
 </table>
 
