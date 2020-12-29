@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 
 import com.elevatelab.ontimepro.MainActivity;
 import com.elevatelab.ontimepro.R;
-import com.elevatelab.ontimepro.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,9 +32,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 
 public class IndividualSignUpFragment extends Fragment {
@@ -68,7 +64,7 @@ public class IndividualSignUpFragment extends Fragment {
         collegeOptions = new ArrayList<>();
         collegeUserUID = new ArrayList<>();
         collegeDomain = new ArrayList<>();
-        collegeOptions.add("Choose Institution");
+        collegeOptions.add("Select Organization");
         collegeUserUID.add("-1");
         collegeDomain.add("-1");
         getCollegeOptions();
@@ -202,7 +198,7 @@ public class IndividualSignUpFragment extends Fragment {
     {
         if(collegeUidSel.equals("-1") && collegeDomainSel.equals("-1"))
         {
-            Toast.makeText(getContext(), "Choose Institution", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Select Organization", Toast.LENGTH_SHORT).show();
             return false;
         }
 

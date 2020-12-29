@@ -1,10 +1,10 @@
 package com.elevatelab.ontimepro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class JoinOrCreate extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class JoinOrCreateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        channelFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, JoinOrCreateActivity.class);
+                startActivity(intent);
+            }
+        });
+
         leftMenuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

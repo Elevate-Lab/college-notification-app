@@ -1,10 +1,10 @@
 package com.elevatelab.ontimepro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class CreateChannel extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CreateChannelActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
