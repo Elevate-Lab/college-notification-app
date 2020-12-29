@@ -32,6 +32,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 
 public class IndividualSignUpFragment extends Fragment {
@@ -65,6 +68,7 @@ public class IndividualSignUpFragment extends Fragment {
         collegeUserUID = new ArrayList<>();
         collegeDomain = new ArrayList<>();
         collegeOptions.add("Select Organization");
+
         collegeUserUID.add("-1");
         collegeDomain.add("-1");
         getCollegeOptions();
