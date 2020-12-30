@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".CreateChannel"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".CreateChannelActivity"
             android:screenOrientation="portrait" />
         <activity
