@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         initViews();
 
         reciever = getIntent();
-        String instiCode = reciever.getStringExtra("instiCode");
+        final String instiCode = reciever.getStringExtra("instiCode");
         Toast.makeText(this, instiCode, Toast.LENGTH_SHORT).show();
         logoutBtn = findViewById(R.id.logout_btn);
         logoutBtn.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, JoinOrCreateActivity.class);
+                intent.putExtra("instiCode",instiCode);
                 startActivity(intent);
             }
         });
