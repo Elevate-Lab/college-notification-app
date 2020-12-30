@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
-import com.elevatelab.ontimepro.MainActivity;
 import com.elevatelab.ontimepro.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -77,7 +75,8 @@ public class OrganizationSignUpFragment extends Fragment {
                                         Log.d("SignUpProfileSetUp : ", "Successful for " + UserId);
                                     }
                                 });
-                                Intent mainActivityIntent = new Intent(getContext(), MainActivity.class);
+                                Intent mainActivityIntent = new Intent(getActivity(), com.elevatelab.ontimepro.MainActivity.class);
+                                mainActivityIntent.putExtra("instiCode",UserId);
                                 startActivity(mainActivityIntent);
                                 Objects.requireNonNull(getActivity()).finish();
                             } else {

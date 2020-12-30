@@ -1,5 +1,4 @@
 package com.elevatelab.ontimepro.Fragments;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.elevatelab.ontimepro.MainActivity;
 import com.elevatelab.ontimepro.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,9 +30,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 
 public class IndividualSignUpFragment extends Fragment {
@@ -226,6 +221,7 @@ public class IndividualSignUpFragment extends Fragment {
     private void startSignUpProcess(final String name, final String email, String password, final String idInsti, final String nameInsti)
     {
         final HashMap<String,String> hashMap = new HashMap<>();
+        final HashMap<String,String> hashMap1 = new HashMap<>();
         auth = FirebaseAuth.getInstance();
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -239,9 +235,11 @@ public class IndividualSignUpFragment extends Fragment {
                             hashMap.put("indUserId",userId);
                             hashMap.put("indEmail",email);
                             hashMap.put("instiName",nameInsti);
+                            hashMap.put("instiID",idInsti);
+                            hashMap1.put("indUserId",userId);
+                            hashMap1.put("instiID",idInsti);
 
-                            db.collection("organizations").document(idInsti)
-                                    .collection("Users")
+                            db.collection("Users")
                                     .document(userId)
                                     .set(hashMap)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -250,7 +248,20 @@ public class IndividualSignUpFragment extends Fragment {
                                             Log.d("Signed Up! : ",userId);
                                         }
                                     });
-                            Intent mainActivityIntent = new Intent(getContext(), MainActivity.class);
+
+                            db.collection("organizations")
+                                    .document(idInsti)
+                                    .collection("Users")
+                                    .document(userId)
+                                    .set(hashMap1)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("Added IN Instituition", userId);
+                                        }
+                                    });
+                            Intent mainActivityIntent = new Intent(getActivity(),com.elevatelab.ontimepro.MainActivity.class);
+                            mainActivityIntent.putExtra("instiCode",idInsti);
                             startActivity(mainActivityIntent);
                             Objects.requireNonNull(getActivity()).finish();
                         }

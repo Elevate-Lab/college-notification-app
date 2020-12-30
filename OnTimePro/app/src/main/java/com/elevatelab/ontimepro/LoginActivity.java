@@ -12,11 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
@@ -29,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout emailTxt, passwordTxt;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseFirestore firebaseFirestore;
+    private String InstiCodeUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         initViews();
         mFirebaseAuth = FirebaseAuth.getInstance();
-
+        firebaseFirestore = FirebaseFirestore.getInstance();
         mSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,9 +62,23 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, "Signed In, successfully !!", Toast.LENGTH_SHORT).show();
-                                Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(mainIntent);
-                                finish();
+                                FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                                String userID = user.getUid();
+                                firebaseFirestore.collection("Users")
+                                        .document(userID)
+                                        .get()
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                                                InstiCodeUser = (String) documentSnapshot.get("instiID");
+                                                Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                                mainIntent.putExtra("instiCode",InstiCodeUser);
+                                                startActivity(mainIntent);
+                                                finish();
+                                            }
+                                        });
+
                             } else {
                                 Log.e("SignInError :", "" + task.getException());
                                 Toast.makeText(LoginActivity.this, "Error in Signing In !!", Toast.LENGTH_SHORT).show();
