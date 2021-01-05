@@ -11,6 +11,8 @@ import com.elevatelab.ontimepro.BackgroundServices.Services;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -21,6 +23,8 @@ import java.util.Map;
 public class CreateChannelActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
+    private TextInputLayout createChName,createChCode;
+    private TextInputEditText editCreateChName,editCreateChCode;
 
 
     @Override
@@ -28,6 +32,8 @@ public class CreateChannelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_channel);
         db = FirebaseFirestore.getInstance();
+        initViews();
+        editCreateChCode.setEnabled(false);
         retrieveCode();
 
     }
@@ -44,8 +50,16 @@ public class CreateChannelActivity extends AppCompatActivity {
 
                         String newChannelCode = Services.codeGenerator(inUseCodes);
 
-                        Toast.makeText(CreateChannelActivity.this, newChannelCode, Toast.LENGTH_SHORT).show();
+                        editCreateChCode.setText(newChannelCode);
                     }
                 });
+    }
+
+    private void initViews()
+    {
+        createChName = findViewById(R.id.channelnameinput);
+        createChCode = findViewById(R.id.channelcodeinput);
+        editCreateChName = findViewById(R.id.channelname);
+        editCreateChCode = findViewById(R.id.channelcode);
     }
 }
