@@ -112,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="0dp"
-            android:text="Join Channel"
+            android:text="Create Channel"
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:layout_below="@+id/joinchannelcard" />
