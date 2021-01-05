@@ -65,16 +65,35 @@ public class OrganizationSignUpFragment extends Fragment {
                                 UserId = Objects.requireNonNull(orgFirebaseAuth.getCurrentUser()).getUid();
                                 DocumentReference mDocumentReference = mFirebaseFireStore.collection("organizations").document(UserId);
                                 Map<String, String> orgMap = new HashMap<>();
+                                Map<String, String> userMap = new HashMap<>();
                                 orgMap.put("orgName", name);
                                 orgMap.put("orgDomain", domain);
                                 orgMap.put("userID",UserId);
                                 orgMap.put("email",email);
+
+                                userMap.put("indEmail",email);
+                                userMap.put("indName",name);
+                                userMap.put("instiName",name);
+                                userMap.put("indUserId",UserId);
+                                userMap.put("instiID",UserId);
+
                                 mDocumentReference.set(orgMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Log.d("SignUpProfileSetUp : ", "Successful for " + UserId);
                                     }
                                 });
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                db.collection("Users")
+                                        .document(UserId)
+                                        .set(userMap)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.i("Organisations saved","HNY");
+                                            }
+                                        });
+
                                 Intent mainActivityIntent = new Intent(getActivity(), com.elevatelab.ontimepro.MainActivity.class);
                                 mainActivityIntent.putExtra("instiCode",UserId);
                                 startActivity(mainActivityIntent);
