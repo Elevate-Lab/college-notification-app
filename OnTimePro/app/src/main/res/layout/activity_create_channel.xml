@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,70 +9,113 @@
    
     tools:context=".models.CreateChannel">
 
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/createChanneltv"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create a Channel"
-        android:layout_marginTop="108dp"
-        android:textSize="40sp"/>
-
-
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="40sp"></TextView>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="   To Create your own Channel   "
-        android:textSize="20sp"/>
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"
-
-        android:layout_marginBottom="24dp">
+        android:text="Your channel is bla bla bla "
+        android:layout_below="@id/createChanneltv"
+        android:gravity="center"
+        android:textSize="20sp"></TextView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/signUp_card"
+            android:id="@+id/joinchannelcard"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            app:cardCornerRadius="8dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="16dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
             app:cardElevation="0dp">
 
-         <com.google.android.material.textview.MaterialTextView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:text="Channel Name"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            />
+                <TextView
+                    android:id="@+id/channelnametext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Channel Name"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/channelnameinput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="clear_text"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:endIconTint="@color/white"
+                    app:endIconCheckable="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/channelname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/input_edt_background_color"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/white" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/channelcodetext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Channel Code"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/channelcodeinput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="clear_text"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:endIconTint="@color/white"
+                    app:endIconCheckable="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/channelcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/input_edt_background_color"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
 
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:endIconMode="clear_text">
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-android:layout_marginTop="8dp"
-        android:inputType="text"/>
-</com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:elevation="0dp"
-    android:text="Create Channel"
-    android:layout_gravity="center"
-    android:layout_marginTop="16dp"
-    />
-
-    </LinearLayout>
 
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:text="Join Channel"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_below="@+id/joinchannelcard" />
 
 
-
-</LinearLayout>
+</RelativeLayout>
