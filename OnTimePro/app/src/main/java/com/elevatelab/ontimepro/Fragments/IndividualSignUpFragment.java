@@ -171,9 +171,9 @@ public class IndividualSignUpFragment extends Fragment {
                             {
                                 System.out.println(s.get("orgName"));
                                 collegeOptions.add(s.get("orgName").toString());
-                                collegeUserUID.add(s.get("userId").toString());
+                                collegeUserUID.add(s.get("userID").toString());
                                 collegeDomain.add(s.get("orgDomain").toString());
-                                Log.i("><><><<><",s.get("userId").toString());
+                                Log.i("><><><<><",s.get("userID").toString());
                                 System.out.println(s.get("orgDomain"));
                                 setSpinnerDetails();
                             }

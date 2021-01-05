@@ -22,14 +22,13 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mFirebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
                 if (mFirebaseAuth.getCurrentUser() != null) {
-
+                    Log.e("User",mFirebaseAuth.getCurrentUser().getEmail());
                     String userID = mFirebaseAuth.getUid();
                     startIntent(userID);
                 }
