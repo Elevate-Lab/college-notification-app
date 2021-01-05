@@ -28,6 +28,21 @@ public class JoinOrCreateActivity extends AppCompatActivity {
         joinChannelOption = findViewById(R.id.joinChannelOption);
         createChannelOption = findViewById(R.id.createChannelOption);
         auth = FirebaseAuth.getInstance();
+
+
+        joinChannelOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(JoinOrCreateActivity.this,Join_channel.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
+
         createChannelOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
