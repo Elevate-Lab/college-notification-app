@@ -44,13 +44,6 @@ public class Services {
 
     private static boolean isDuplicateCode(ArrayList<String> inUseCodes,String generatedCode)
     {
-        for(String code : inUseCodes)
-        {
-            if(code.equals(generatedCode))
-                return true;
-        }
-        return false;
+        return inUseCodes.contains(generatedCode);
     }
-
-
 }
