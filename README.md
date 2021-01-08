@@ -1,6 +1,6 @@
 # OnTimePro ⏲
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A real-time pop-up-notification App which reminds us of our schedule/timetable⏳ with just one click to wake up the homescreen of our smartphone📱.
 
